@@ -37,11 +37,16 @@
     "category-general"
   ],
   "dependencies": {
+    "@nativescript/canvas": "^0.9.18",
+    "@nativescript/canvas-pixi": "^1.0.0-alpha6",
+    "@nativescript/canvas-polyfill": "^1.0.0-alpha22",
     "@nativescript/core": "~8.0.0",
     "@nativescript/theme": "~3.0.1",
-    "nativescript-vue": "~2.9.0"
+    "nativescript-vue": "~2.9.0",
+    "pixi.js": "^6.0.2"
   },
   "devDependencies": {
+    "@nativescript/android": "8.0.0",
     "@nativescript/webpack": "beta",
     "nativescript-vue-template-compiler": "~2.9.0",
     "sass": "^1.32.8"
