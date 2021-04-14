@@ -14,38 +14,15 @@
         methods: {
             canvasReady(args){
                const canvas = args.object;
-               const app = new TNSPIXIApplication({
-                       canvas,
-                       backgroundColor: 0x1099bb,
-                   });
-               app.loader.add("bg_grass", "~/assets/images/bg_grass.jpg").load(build);
-           
-               function build() {
-                   // Create a new texture
-                   const texture = app.loader.resources.bg_grass.texture;
-           
-                   // Create the simple plane
-                   const verticesX = 10;
-                   const verticesY = 10;
-                   const plane = new PIXI.SimplePlane(texture, verticesX, verticesY);
-           
-                   plane.x = 100;
-                   plane.y = 100;
-           
-                   app.stage.addChild(plane);
-           
-                   // Get the buffer for vertice positions.
-                   const buffer = plane.geometry.getBuffer("aVertexPosition") ;
-           
-                   // Listen for animate update
-                   app.ticker.add((delta) => {
-                       // Randomize the vertice positions a bit to create movement.
-                       for (let i = 0; i < buffer.data.length; i++) {
-                           buffer.data[i] += Math.random() - 0.5;
-                       }
-                       buffer.update();
-                   });
-                   }
+                const app = new TNSPIXIApplication({
+                    canvas,
+                    backgroundColor: 0x1099bb,
+                });
+                var graphics = new PIXI.Graphics();
+                graphics.beginFill(0xFFFF00);
+                graphics.lineStyle(5, 0xFF0000);
+                graphics.drawRect(0, 0, 300, 200);
+                app.stage.addChild(graphics);
             }
         }
     }
